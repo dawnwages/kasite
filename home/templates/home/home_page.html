@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load static %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block content %}
+<main>
+        <div class="banner">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <img id="me" class="home-stacked-img" src="{% static '/images/KLA-stacked-blk_lg.png' %}"/>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            {{ page.body|richtext }}
+
+    </div>
+</main>
+
+    {% include 'includes/newsletter.html' %}
+    {% include 'includes/js-picker.html' %}
+{% endblock content %}
